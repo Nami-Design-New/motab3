@@ -253,6 +253,7 @@
         <div class="card">
           <div class="card-header">
             <h6 class="card-title m-0"> الطلبات </h6>
+
             <!-- widgest  -->
             <div class="d-flex align-items-center gap-3">
               <a href="#" class="card-fullscreen m-0" data-bs-toggle="tooltip" title=" ملء الشاشة ">
@@ -260,6 +261,7 @@
               </a>
             </div>
           </div>
+
           <div class="card-body">
             <!-- data table -->
             <table id="dataTable" class="table myDataTable align-middle custom-table">
@@ -339,7 +341,7 @@
             </table>
           </div>
           <!-- modal -->
-          <div class="modal fade " id="priority" tabindex="-1">
+          <div class="modal fade " id="priority">
             <div class="modal-dialog modal-dialog-centered ">
               <div class="modal-content ">
                 <!-- header -->
@@ -371,7 +373,16 @@
                     <div class="col-12">
                       <div class="mb-2">
                         <label class="form-label"> التحويل الي </label>
-                        <input type="text" class="form-control form-control-lg" placeholder=" اكتب هنا ">
+                        <select class="select2Search">
+                          <option value=""> نقطه 1 </option>
+                          <option value=""> نقطه 2 </option>
+                          <option value=""> نقطه 3 </option>
+                          <option value=""> نقطه 4 </option>
+                          <option value=""> نقطه 5 </option>
+                          <option value=""> نقطه 6 </option>
+
+                        </select>
+
                       </div>
                     </div>
 
@@ -445,9 +456,12 @@
 
   <script src="assets/js/bundle/select2.bundle.js"></script>
   <script>
+    $('.select2Search').select2()
     $('.select2').select2({
       minimumResultsForSearch: -1,
     })
+
+
   </script>
 </body>
 

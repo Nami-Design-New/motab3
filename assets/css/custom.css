@@ -283,6 +283,6 @@ textarea.form-control {
   border-radius: 0.5rem;
 }
 
-.select2-container {
+.select2-container .select2-dropdown {
   z-index: 1055;
 }/*# sourceMappingURL=custom.css.map */
