@@ -38,7 +38,7 @@
           </li>
           <li>
             <!-- main link -->
-            <a class="m-link" href="branches.html">
+            <a class="m-link active" href="branches.html">
               <i class="fa-regular fa-map-location-dot"></i>
               <span> الفروع </span>
             </a>
@@ -52,7 +52,7 @@
           </li>
           <li>
             <!-- main link -->
-            <a class="m-link active" href="order-priority.html">
+            <a class="m-link" href="order-priority.html">
               <i class="fa-regular fa-sheet-plastic"></i>
               <span> الطلبات ( تحديد الأولوية ) </span>
             </a>
@@ -240,7 +240,7 @@
           <div class="col">
             <ol class="breadcrumb bg-transparent mb-0">
               <li class="breadcrumb-item"> <a class="text-secondary" href="index.html"> الرئيسية </a> </li>
-              <li class="breadcrumb-item active" aria-current="page"> الطلبات </li>
+              <li class="breadcrumb-item active" aria-current="page"> الفروع </li>
             </ol>
           </div>
         </div>
@@ -252,91 +252,18 @@
         <!-- put your content here -->
         <div class="card">
           <div class="card-header">
-            <h6 class="card-title m-0"> الطلبات </h6>
+            <h6 class="card-title m-0"> الفروع </h6>
             <!-- widgest  -->
             <div class="d-flex align-items-center gap-3">
+              <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> اضافة
+              </a>
               <a href="#" class="card-fullscreen m-0" data-bs-toggle="tooltip" title=" ملء الشاشة ">
                 <i class="icon-size-fullscreen"></i>
               </a>
             </div>
           </div>
           <div class="card-body">
-            <!-- data table -->
-            <table id="dataTable" class="table myDataTable align-middle custom-table">
-              <thead>
-                <tr>
-                  <th> رقم المعاملة </th>
-                  <th> التاريخ </th>
-                  <th> اسم المُبلغ </th>
-                  <th> رقم الهوية </th>
-                  <th> الموضوع </th>
-                  <th> ملاحظات </th>
-                  <th> ادارة </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td> 001 </td>
-                  <td> 2022-05-01 </td>
-                  <td> أحمد علي </td>
-                  <td> 1234567890 </td>
-                  <td> شكوى </td>
-                  <td> تم استلام الشكوى </td>
-                  <td>
-                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> تحويل
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td> 002 </td>
-                  <td> 2022-05-02 </td>
-                  <td> محمد خالد </td>
-                  <td> 2345678901 </td>
-                  <td> اقتراح </td>
-                  <td> </td>
-                  <td>
-                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> تحويل
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td> 003 </td>
-                  <td> 2022-05-03 </td>
-                  <td> فاطمة عبدالله </td>
-                  <td> 3456789012 </td>
-                  <td> طلب </td>
-                  <td> </td>
-                  <td>
-                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> تحويل
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td> 004 </td>
-                  <td> 2022-05-04 </td>
-                  <td> ياسر سعد </td>
-                  <td> 4567890123 </td>
-                  <td> شكوى </td>
-                  <td> يرجي الحل في اقرب وقت </td>
-                  <td>
-                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> تحويل
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td> 005 </td>
-                  <td> 2022-05-05 </td>
-                  <td> ليلى محمد </td>
-                  <td> 5678901234 </td>
-                  <td> اقتراح </td>
-                  <td> </td>
-                  <td>
-                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> تحويل
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div id="map"></div>
           </div>
           <!-- modal -->
           <div class="modal fade " id="priority">
@@ -344,7 +271,7 @@
               <div class="modal-content ">
                 <!-- header -->
                 <div class="modal-header">
-                  <h6 class="modal-title fw-bold"> تحويل </h6>
+                  <h6 class="modal-title fw-bold"> اضافة </h6>
                   <button type="button" class="btn-close ms-auto me-0" data-bs-dismiss="modal"
                     aria-label="Close"></button>
                 </div>
@@ -352,42 +279,30 @@
                 <div class="modal-body">
                   <form class="row g-3" action="">
                     <div class="col-12">
-                      <div class="mb-2">
-                        <label class="form-label"> تحديد الأولوية </label>
-                        <select class="select2">
-                          <option value=""> غير مهم </option>
-                          <option value=""> عادي </option>
-                          <option value=""> مهم </option>
-                          <option value=""> مهم جدا </option>
-                        </select>
-                      </div>
+                      <label class="form-label"> اسم الموقع </label>
+                      <input type="text" class="form-control  form-control-lg" placeholder="اكتب هنا ">
                     </div>
                     <div class="col-12">
                       <div class="mb-2">
-                        <label class="form-label"> موعد التبيه و التذكير </label>
-                        <div class="input-group ">
-                          <input type="text" class="form-control  form-control-lg" placeholder="اكتب هنا"
-                            aria-label="اكتب هنا" aria-describedby="basic-addon2">
-                          <span class="input-group-text" id="basic-addon2"> يوم </span>
+                        <label class="form-label"> الموقع </label>
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="input-group ">
+                              <input type="text" class="form-control  form-control-lg" placeholder="exmple: 21.389082">
+                              <span class="input-group-text" id="basic-addon2"> lat </span>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="input-group ">
+                              <input type="text" class="form-control  form-control-lg" placeholder="exmple: 39.857911">
+                              <span class="input-group-text" id="basic-addon2"> lng </span>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-
-                    </div>
-                    <div class="col-12">
-                      <div class="mb-2">
-                        <label class="form-label"> التحويل الي </label>
-                        <select class="select2">
-                          <option value=""> نقطه 1 </option>
-                          <option value=""> نقطه 2 </option>
-                          <option value=""> نقطه 3 </option>
-                          <option value=""> نقطه 4 </option>
-                          <option value=""> نقطه 5 </option>
-                          <option value=""> نقطه 6 </option>
-                        </select>
                       </div>
                     </div>
                     <div class="col-12 text-center mt-4">
-                      <button type="submit" class="btn btn-lg btn-block btn-dark lift text-uppercase"> تحويل </button>
+                      <button type="submit" class="btn btn-lg btn-block btn-dark lift text-uppercase"> اضافة </button>
                     </div>
                   </form>
                 </div>
@@ -421,44 +336,61 @@
   <!-- ////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
   <script src="assets/js/theme.js">  </script>
   <script src="assets/js/bundle/dataTables.bundle.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN6CvEFUVrJsteNDeuIvEYzsY1eRI4zr4"></script>
   <script>
-    // Data Table
-    $('#dataTable').addClass('nowrap').dataTable({
-      responsive: true,
-      searching: true,
-      paging: true,
-      ordering: false,
-      info: false,
-      "language": {
-        "sEmptyTable": "لا توجد بيانات متاحة في الجدول",
-        "sInfo": "عرض السجلات _START_ إلى _END_ من أصل _TOTAL_ مدخل",
-        "sInfoEmpty": "عرض السجلات 0 إلى 0 من أصل 0 مدخل",
-        "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
-        "sInfoPostFix": "",
-        "sLengthMenu": "أظهر _MENU_ مُدخل",
-        "sLoadingRecords": "جارٍ التحميل...",
-        "sProcessing": "جارٍ المعالجة...",
-        "sSearch": "البحث:",
-        "sZeroRecords": "لم يتم العثور على أية سجلات",
-        "oPaginate": {
-          "sFirst": "الأول",
-          "sLast": "الأخير",
-          "sNext": "التالي",
-          "sPrevious": "السابق"
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: { lat: 21.422510, lng: 39.826168 } // Centered on Makkah, KSA
+      });
+      var markers = [
+        {
+          position: { lat: 21.389082, lng: 39.857911 },
+          title: 'جبل النور',
+          info: '  '
         },
-        "oAria": {
-          "sSortAscending": ": تفعيل لترتيب العمود تصاعدياً",
-          "sSortDescending": ": تفعيل لترتيب العمود تنازلياً"
+        {
+          position: { lat: 21.403151, lng: 39.885770 },
+          title: 'المسجد الحرام',
+          info: '  '
+        },
+        {
+          position: { lat: 21.420460, lng: 39.825330 },
+          title: 'أبراج البيت',
+          info: '  '
+        },
+        {
+          position: { lat: 21.426497, lng: 39.825383 },
+          title: 'بئر زمزم',
+          info: '  '
         }
-      }
-    });
-  </script>
-  <script src="assets/js/bundle/select2.bundle.js"></script>
-  <script>
-    // $('.select2Search').select2();
-    $('.select2').select2({
-      // minimumResultsForSearch: -1,
-    })
+      ];
+      // Create info windows for each marker
+      var infowindows = markers.map(function (marker) {
+        var contentString = '<div class="infowindow"><h4>' + marker.title + '</h4><p>' + marker.info + '</p></div>';
+        return new google.maps.InfoWindow({
+          content: contentString
+        });
+      });
+      // Add click event listeners to showinfo window for each marker
+      var currentInfowindow = null; // variable to hold the current open info window
+      markers.forEach(function (marker, index) {
+        var markerObj = new google.maps.Marker({
+          position: marker.position,
+          map: map,
+          title: marker.title
+        });
+        markerObj.addListener('click', function () {
+          // Close the currently open info window, if any
+          if (currentInfowindow) {
+            currentInfowindow.close();
+          }
+          // Open the clicked marker's info window and set it as the current info window
+          infowindows[index].open(map, markerObj);
+          currentInfowindow = infowindows[index];
+        });
+      });
+    } initMap();
   </script>
 </body>
 
