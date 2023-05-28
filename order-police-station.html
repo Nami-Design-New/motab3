@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -8,12 +9,15 @@
   <meta name="keyword" content=" maintenance management  computerized system ">
   <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
   <title> متابع </title>
+  <!-- select2  -->
+  <link rel="stylesheet" href="assets/cssbundle/select2.min.css">
   <!-- main styles -->
   <link rel="stylesheet" href="assets/css/all.css">
   <link rel="stylesheet" href="assets/css/styleAR.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <script src="assets/js/plugins.js">  </script>
 </head>
+
 <body class="layout-1" data-nami="theme-blue">
   <!-- sidebar -->
   <div class="sidebar p-2 py-md-3 ">
@@ -41,7 +45,7 @@
           </li>
           <li>
             <!-- main link -->
-            <a class="m-link active" href="orders.html">
+            <a class="m-link" href="orders.html">
               <i class="fa-regular fa-sheet-plastic"></i>
               <span> الطلبات </span>
             </a>
@@ -55,7 +59,7 @@
           </li>
           <li>
             <!-- main link -->
-            <a class="m-link" href="order-police-station.html">
+            <a class="m-link active" href="order-police-station.html">
               <i class="fa-regular fa-sheet-plastic"></i>
               <span> الطلبات ( المركز او النقطه ) </span>
             </a>
@@ -251,7 +255,6 @@
             <h6 class="card-title m-0"> الطلبات </h6>
             <!-- widgest  -->
             <div class="d-flex align-items-center gap-3">
-              <a href="add-order.html" class="btn btn-primary"> اضافة طلب </a>
               <a href="#" class="card-fullscreen m-0" data-bs-toggle="tooltip" title=" ملء الشاشة ">
                 <i class="icon-size-fullscreen"></i>
               </a>
@@ -268,6 +271,7 @@
                   <th> رقم الهوية </th>
                   <th> الموضوع </th>
                   <th> ملاحظات </th>
+                  <th> ادارة </th>
                 </tr>
               </thead>
               <tbody>
@@ -278,6 +282,10 @@
                   <td> 1234567890 </td>
                   <td> شكوى </td>
                   <td> تم استلام الشكوى </td>
+                  <td>
+                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> حالة الطلب
+                    </a>
+                  </td>
                 </tr>
                 <tr>
                   <td> 002 </td>
@@ -286,6 +294,10 @@
                   <td> 2345678901 </td>
                   <td> اقتراح </td>
                   <td> </td>
+                  <td>
+                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> حالة الطلب
+                    </a>
+                  </td>
                 </tr>
                 <tr>
                   <td> 003 </td>
@@ -294,6 +306,10 @@
                   <td> 3456789012 </td>
                   <td> طلب </td>
                   <td> </td>
+                  <td>
+                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> حالة الطلب
+                    </a>
+                  </td>
                 </tr>
                 <tr>
                   <td> 004 </td>
@@ -302,6 +318,10 @@
                   <td> 4567890123 </td>
                   <td> شكوى </td>
                   <td> يرجي الحل في اقرب وقت </td>
+                  <td>
+                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> حالة الطلب
+                    </a>
+                  </td>
                 </tr>
                 <tr>
                   <td> 005 </td>
@@ -310,9 +330,40 @@
                   <td> 5678901234 </td>
                   <td> اقتراح </td>
                   <td> </td>
+                  <td>
+                    <a href="#!" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#priority"> حالة الطلب
+                    </a>
+                  </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+          <!-- modal -->
+          <div class="modal fade " id="priority">
+            <div class="modal-dialog modal-dialog-centered ">
+              <div class="modal-content ">
+                <!-- header -->
+                <div class="modal-header">
+                  <h6 class="modal-title fw-bold"> حالة الطلب </h6>
+                  <button type="button" class="btn-close ms-auto me-0" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                  <form class="row g-3" action="">
+                    <div class="col-12">
+                      <label class="form-label"> ملاحظات </label>
+                      <textarea  class="form-control  form-control-lg" placeholder="اكتب هنا " rows="5"></textarea>
+                    </div>
+                   
+                    <div class="col-12 text-center mt-4">
+                      <button type="button" class="btn btn-lg btn-block btn-dark lift text-uppercase"> إرجاع </button>
+                      <button type="submit" class="btn btn-lg btn-block btn-primary lift text-uppercase"> إتمام الطلب </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -347,7 +398,7 @@
       responsive: true,
       searching: true,
       paging: true,
-      ordering: true,
+      ordering: false,
       info: false,
       "language": {
         "sEmptyTable": "لا توجد بيانات متاحة في الجدول",
@@ -373,5 +424,13 @@
       }
     });
   </script>
+  <script src="assets/js/bundle/select2.bundle.js"></script>
+  <script>
+    // $('.select2Search').select2();
+    $('.select2').select2({
+      // minimumResultsForSearch: -1,
+    })
+  </script>
 </body>
+
 </html>
