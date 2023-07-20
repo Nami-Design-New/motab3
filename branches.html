@@ -61,7 +61,7 @@
             <!-- main link -->
             <a class="m-link" href="order-police-station.html">
               <i class="fa-regular fa-sheet-plastic"></i>
-              <span> المعاملات ( المركز او النقطه ) </span>
+              <span> المعاملات ( المركز او الحي ) </span>
             </a>
           </li>
           <li>
@@ -138,10 +138,20 @@
                       <li class="py-2 mb-1 border-bottom">
                         <a href="javascript:void(0);" class="d-flex">
                           <div class="flex-fill ms-3">
-                            <p class="d-flex justify-content-between mb-0"> <span> معاملة جديد </span>
+                            <p class="d-flex justify-content-between mb-0"> <span> تنبية بالتأخير </span>
                               <small> 2 س </small>
                             </p>
-                            <span class="pt-2 fw-bold"> هناك معاملة جديد رقم : #6486 </span>
+                            <span class="pt-2 fw-bold"> هناك تأخير في الرد في المعاملة رقم : #51322 </span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="py-2 mb-1 border-bottom">
+                        <a href="javascript:void(0);" class="d-flex">
+                          <div class="flex-fill ms-3">
+                            <p class="d-flex justify-content-between mb-0"> <span> تنبية بالتأخير </span>
+                              <small> 3 س </small>
+                            </p>
+                            <span class="pt-2 fw-bold"> هناك تأخير في الرد في المعاملة رقم : #2313215 </span>
                           </div>
                         </a>
                       </li>
@@ -151,17 +161,7 @@
                             <p class="d-flex justify-content-between mb-0"> <span> معاملة جديد </span>
                               <small> 3 س </small>
                             </p>
-                            <span class="pt-2 fw-bold"> هناك معاملة جديد رقم : #6486 </span>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="py-2 mb-1 border-bottom">
-                        <a href="javascript:void(0);" class="d-flex">
-                          <div class="flex-fill ms-3">
-                            <p class="d-flex justify-content-between mb-0"> <span> معاملة جديد </span>
-                              <small> 3 س </small>
-                            </p>
-                            <span class="pt-2 fw-bold"> هناك معاملة جديد رقم : #6486 </span>
+                            <span class="pt-2 fw-bold"> هناك معاملة جديد رقم : #23544 </span>
                           </div>
                         </a>
                       </li>
@@ -321,7 +321,7 @@
             شرطة منطقة مكة المكرمة - الأمن الجنائي
           </a>
           © 2023
-          
+
         </p>
       </div>
     </footer>
@@ -340,29 +340,57 @@
   <script>
     function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
+        zoom: 14,
         center: { lat: 21.422510, lng: 39.826168 } // Centered on Makkah, KSA
       });
       var markers = [
         {
           position: { lat: 21.389082, lng: 39.857911 },
-          title: 'جبل النور',
-          info: '  '
+          title: 'شرطة حي 1',
+          info: '  ',
+          icon: 'assets/img/red-dot.svg'
         },
         {
           position: { lat: 21.403151, lng: 39.885770 },
-          title: 'المسجد الحرام',
-          info: '  '
+          title: 'شرطة حي 2',
+          info: '  ',
+          icon: 'assets/img/green-dot.svg'
         },
         {
           position: { lat: 21.420460, lng: 39.825330 },
-          title: 'أبراج البيت',
-          info: '  '
+          title: 'شرطة حي 3',
+          info: '  ',
+          icon: 'assets/img/yellow-dot.svg'
         },
         {
           position: { lat: 21.426497, lng: 39.825383 },
-          title: 'بئر زمزم',
-          info: '  '
+          title: 'شرطة حي 4',
+          info: '  ',
+          icon: 'assets/img/red-dot.svg'
+        },
+        {
+          position: { lat: 21.415687, lng: 39.843590 },
+          title: 'شرطة حي 5',
+          info: '  ',
+          icon: 'assets/img/green-dot.svg'
+        },
+        {
+          position: { lat: 21.404938, lng: 39.832790 },
+          title: 'شرطة حي 6',
+          info: '  ',
+          icon: 'assets/img/green-dot.svg'
+        },
+        {
+          position: { lat: 21.431594, lng: 39.835295 },
+          title: 'شرطة حي 7',
+          info: '  ',
+          icon: 'assets/img/yellow-dot.svg'
+        },
+        {
+          position: { lat: 21.409720, lng: 39.855627 },
+          title: 'شرطة حي 8',
+          info: '  ',
+          icon: 'assets/img/yellow-dot.svg'
         }
       ];
       // Create info windows for each marker
@@ -378,7 +406,8 @@
         var markerObj = new google.maps.Marker({
           position: marker.position,
           map: map,
-          title: marker.title
+          title: marker.title,
+          icon: marker.icon // add the icon property here
         });
         markerObj.addListener('click', function () {
           // Close the currently open info window, if any
@@ -390,7 +419,8 @@
           currentInfowindow = infowindows[index];
         });
       });
-    } initMap();
+    }
+    initMap();
   </script>
 </body>
 
